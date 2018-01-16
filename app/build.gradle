@@ -1,0 +1,29 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+  }
+}
+
+apply plugin: 'gwt'
+apply plugin: 'war'
+
+
+gwt {
+  gwtVersion = '2.8.1'
+
+  modules 'org.shagen.app'
+
+  maxHeapSize = "1024M"
+
+  superDev {
+    noPrecompile = true
+  }
+}
+
+
+dependencies {
+  testCompile('junit:junit:4.12')
+}

@@ -1,0 +1,19 @@
+ext.lib = [
+    google: [
+      jsinterop: 'com.google.jsinterop:jsinterop-annotations:1.0.1'
+    ],
+    gwt: [
+        user: 'com.google.gwt:gwt-user:2.8.1'
+    ]
+]
+
+allprojects {
+
+  repositories {
+    mavenCentral()
+  }
+
+  configurations.all {
+    //transitive = false
+  }
+}
