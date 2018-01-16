@@ -1,0 +1,36 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+  }
+}
+
+apply plugin: 'gwt'
+
+
+jar {
+  from project.sourceSets.main.allJava
+  from('src/main/java') {
+    include '**/*.ui.xml'
+    include '**/*.gwt.xml'
+  }
+}
+
+
+gwt {
+  gwtVersion = '2.8.1'
+
+  modules 'org.shagen.app.Ping'
+
+  maxHeapSize = "1024M"
+
+  superDev {
+    noPrecompile = true
+  }
+}
+
+dependencies {
+  testCompile('junit:junit:4.12')
+}

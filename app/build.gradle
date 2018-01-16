@@ -10,15 +10,27 @@ buildscript {
 apply plugin: 'gwt'
 apply plugin: 'war'
 
-configurations {
-  gwtLibs
+
+
+sourceSets {
+  gwtDep
 }
 
+task gwtDependencies {
+
+  doLast {
+
+    project.configurations.gwtDepCompile.dependencies
+        .collect {it.getDependencyProject()}
+        .each {gwt.src += files(it.sourceSets.main.allJava.srcDirs)}
+  }
+
+}
 
 gwt {
   gwtVersion = '2.8.1'
 
-  modules 'org.shagen.app'
+  modules 'org.shagen.App'
 
   maxHeapSize = "1024M"
 
@@ -27,8 +39,9 @@ gwt {
   }
 }
 
+compileGwt.dependsOn 'gwtDependencies'
 
 dependencies {
-  providedCompile(lib.google.jsinterop)
+  gwt project(':ping')
   testCompile('junit:junit:4.12')
 }
