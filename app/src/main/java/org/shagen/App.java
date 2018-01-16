@@ -1,12 +1,17 @@
 package org.shagen;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
-import org.shagen.app.Ping;
 
 public class App implements EntryPoint {
 
+
     public void onModuleLoad() {
-        Window.alert(new Ping().getClass().getCanonicalName());
+        ConfigMapper mapper = GWT.create(ConfigMapper.class);
+
+        Window.alert(ConfigBundle.INSTANCE.pluginConfig().getText());
+        Config config = mapper.read(ConfigBundle.INSTANCE.pluginConfig().getText());
+        Window.alert(config.getState());
     }
 }

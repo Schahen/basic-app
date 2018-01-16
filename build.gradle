@@ -3,7 +3,8 @@ ext.lib = [
       jsinterop: 'com.google.jsinterop:jsinterop-annotations:1.0.1'
     ],
     gwt: [
-        user: 'com.google.gwt:gwt-user:2.8.1'
+        user: 'com.google.gwt:gwt-user:2.8.1',
+        jackson: 'com.github.nmorel.gwtjackson:gwt-jackson:0.14.2'
     ]
 ]
 
