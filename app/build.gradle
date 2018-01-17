@@ -42,6 +42,8 @@ compileGwt.dependsOn 'gwtDependencies'
 
 dependencies {
   gwt project(':ping')
+  runtime  lib.urlrewritefilter
   compile lib.gwt.jackson
+  compile lib.elemental.dom
   testCompile('junit:junit:4.12')
 }

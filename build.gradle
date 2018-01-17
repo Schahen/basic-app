@@ -5,7 +5,18 @@ ext.lib = [
     gwt: [
         user: 'com.google.gwt:gwt-user:2.8.1',
         jackson: 'com.github.nmorel.gwtjackson:gwt-jackson:0.14.2'
-    ]
+    ],
+    elemental: [
+        core: 'com.google.elemental2:elemental2-core:1.0.0-RC1',
+        dom: 'com.google.elemental2:elemental2-dom:1.0.0-RC1',
+        promise: 'com.google.elemental2:elemental2-promise:1.0.0-RC1',
+        indexeddb: 'com.google.elemental2:elemental2-indexeddb:1.0.0-RC1',
+        svg: 'com.google.elemental2:elemental2-svg:1.0.0-RC1',
+        webgl: 'com.google.elemental2:elemental2-webgl:1.0.0-RC1',
+        media: 'com.google.elemental2:elemental2-media:1.0.0-RC1',
+        webstorage: 'com.google.elemental2:elemental2-webstorage:1.0.0-RC1',
+    ],
+    urlrewritefilter: 'org.tuckey:urlrewritefilter:4.0.3'
 ]
 
 
